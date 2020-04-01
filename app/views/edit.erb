@@ -1,0 +1,9 @@
+
+<h1>Edit Article</h1>
+Existing Title: <%= @article.title %><br>
+Existing Content: <%= @article.content %><br><br>
+<form method='post' action='/articles/<%= @article.id %>'>
+New Title: <input type='text' name='title'><br>
+New Content: <input type='text' name='content'><br>
+<input id='hidden' type='hidden' name='_method' value='patch'>
+<input type='submit' id='submit'>
