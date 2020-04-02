@@ -45,18 +45,8 @@ class ApplicationController < Sinatra::Base
   end
 
   patch '/articles/:id' do
-    # binding.pry
     @article = Article.find(params[:id])
-    params.delete("_method")
-    @article.update(params)
+    @article.update(params[:article])
     redirect to "/articles/#{@article.id}"
-  end
-
-  delete '/articles/:id' do
-    # binding.pry
-    @article = Article.find(params[:id])
-    # params.delete("_method")
-    Article.destroy(@article.id)
-    redirect to "/articles"
   end
 end
