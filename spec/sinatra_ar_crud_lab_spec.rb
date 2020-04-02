@@ -18,7 +18,7 @@ describe "Magazine App" do
       fill_in :content, :with => "content!!!!"
 
       page.find(:css, "[type=submit]").click
-
+      
       expect(Article.all.count).to eq(3)
       expect(Article.last.title).to eq("my favorite article")
     end
